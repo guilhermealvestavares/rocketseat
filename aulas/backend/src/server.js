@@ -5,7 +5,6 @@ const app = express();
 app.use(express.json()); // passar json pelo body
 app.use(routes); //equivalente a ter aquelas rotas aqui. importando as rotas do arquivo rotas.js
 
-
 app.listen(3333); //porta que ouvirá tudo isso
 
 // app.post('/users',(req,res) =>{} primeiro parametro do get é a rota, o segundo é uma funcao. req pega parametro enviado na requisicao
