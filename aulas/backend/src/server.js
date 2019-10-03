@@ -1,11 +1,19 @@
 const express = require('express'); //importar dependencia externa
-const routes = require ('./routes'); //puxando rotas de arquivo routes.js
+const routes = require('./routes'); //puxando rotas de arquivo routes.js
+const mongoose = require('mongoose'); //importando mongoose
 
 const app = express(); 
+
+mongoose.connect('mongodb+srv://guilhermetavalves:hackgui1cf@omnistack-mfmgq.mongodb.net/semana09?retryWrites=true&w=majority',{
+    useNewUrlParser: true,
+    useUnifiedTopology: true
+})
+
 app.use(express.json()); // passar json pelo body
 app.use(routes); //equivalente a ter aquelas rotas aqui. importando as rotas do arquivo rotas.js
 
 app.listen(3333); //porta que ouvirá tudo isso
+
 
 // app.post('/users',(req,res) =>{} primeiro parametro do get é a rota, o segundo é uma funcao. req pega parametro enviado na requisicao
 
